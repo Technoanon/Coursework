@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Align-Self Property</title>
+  <style>
+      /* Flex-container defines containers*/
+
+    .flex-container {
+        display: flex;
+        height: 200px;
+        background-color: #f1f1f1;
+    }
+      /* style for eache child div inside container*/
+      .flex-container > div {
+          background-color: dodgerblue;
+          color: white;
+          width: 100px;
+          margin: 10px;
+          text-align: center;
+          line-height: 75px;
+          font-size: 30px;
+      }
+
+
+  </style>
+</head>
+<body>
+<h1> Align-self Property</h1>
+<p> The "align-self: center;" aligns the selected flex item in the middle.</p>
+<div class = "flex-container">
+<div>1</div> <!-- first item -->
+<div>2</div> <!-- second item -->
+    <div style="align-self: center">3</div>
+    <div>4</div>
+<p> The align-self property overrides the align-items of the property of the container.</p>
+</div>
+</body>
+</html>

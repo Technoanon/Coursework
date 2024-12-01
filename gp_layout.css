@@ -1,0 +1,140 @@
+@charset "utf-8";
+
+/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 5
+   Case Problem 1
+   
+   Author: Richard Bruno
+   Date:   Nov. 6, 2024
+   
+   Filename: gp_layout.css
+
+   This file contains the layout styles and media
+   queries used with sample pages from the Golden
+   Pulps website.
+
+*/
+
+
+/* Import Basic Design Styles Used on All Screens */
+
+@import url("gp_designs.css");
+
+/* Flex Layout Styles */
+body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+#sheet {
+    flex-grow: 3;
+    flex-shrink: 1;
+    flex-basis: 301px;
+}
+
+article {
+    flex-grow: 1;
+    flex-shrink: 3;
+    flex-basis: 180px;
+}
+
+/* ============================================
+	Mobile Devices: 0 - 480 pixels
+   ============================================
+*/
+@media screen and (max-width: 480px) {
+
+    body{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    #sheet {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: auto;
+    }
+    article {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: auto;
+
+    }
+    .panel img {
+        width: 100%;
+    }
+    nav{
+        order: 99;
+    }
+    body > footer {
+        order: 100;
+    }
+}
+
+
+
+/* ===================================================
+	Tablet and Desktop Devices: Greater than 480 pixels
+   ===================================================
+*/
+
+@media screen and (min-width: 481px) {
+    body {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    #sheet {
+        flex-grow: 3;
+        flex-shrink: 1;
+        flex-basis: 301px;
+    }
+    article {
+        flex-grow: 1;
+        flex-shrink: 3;
+        flex-basis: 180px;
+    }
+    nav {
+        order: 99;
+    }
+    body > footer {
+        order: 100;
+    }
+    .panel img {
+        width: auto;
+    }
+    nav ul {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        height: 40px;
+    }
+    nav ul li {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: auto;
+    }
+    .size1 img {
+        width: 100%;
+    }
+    .size2 {
+        width: 60%;
+    }
+    .size3 {
+        width: 40%;
+    }
+    .size4 {
+        width: 30%;
+    }
+}
